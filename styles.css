@@ -1,0 +1,509 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+    font-size: 18px;
+    a {
+        text-decoration: none;
+    }
+    list-style: none;
+}
+
+/* -----------------------------------------Body-------------------------------------*/
+body {
+    background-color: #FBF5F4;
+}
+
+main {
+    padding-top: 80px;
+}
+
+/* -----------------------------------------------Header-------------------------------------------- */
+header {
+    background-color: #ffffff;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* --- left-header --- */
+#left-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* menu */
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.menu-item {
+    color: #EA4C89;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    opacity: 0.6;
+    margin-left: 15px;
+}
+
+.menu-item i {
+    font-size: 34px;
+    margin-right: 5px;
+}
+
+.menu-item span {
+    font-weight: 700;
+    font-size: 22px;
+    padding-right: 15px;
+    border-right: 3px solid rgba(234, 76, 137, 0.3);
+}
+
+.menu-item:last-child span {
+    border-right: none;
+}
+
+.menu-item:hover {
+    opacity: 1;
+
+    i,
+    span {
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    }
+}
+
+#menu .active {
+    opacity: 1;
+    border-bottom: 4px solid black;
+
+    i,
+    span {
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+
+#kpi {
+    position: relative;
+    /* Đặt phần tử cha của kpi-list là relative */
+}
+
+.kpi-list {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    width: max-content;
+    visibility: hidden;
+    transition: margin 0.5s ease;
+    margin-top: 50px;
+}
+
+.kpi-list li {
+    padding: 10px;
+}
+
+.kpi-list li a {
+    display: flex;
+    align-items: center;
+    color: #EA4C89;
+    opacity: 0.6;
+}
+
+.kpi-list li a:hover {
+    opacity: 1;
+}
+
+.kpi-list li a i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.kpi-list li a span {
+    font-weight: 700;
+}
+
+.kpi-list:hover,
+#kpi:hover+.kpi-list {
+    visibility: visible;
+    margin-top: 0;
+}
+
+/* --- right-header --- */
+#right-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#right-header button i {
+    font-size: 34px;
+    color: #EA4C89;
+}
+
+#right-header button:hover {
+    background-color: rgba(236, 207, 203, 0.5);
+}
+
+/* avatar */
+#avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #EA4C89;
+    margin-left: 15px;
+    position: relative;
+}
+
+#avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* avatar-menu */
+#avatar-menu {
+    background-color: white;
+    position: absolute;
+    top: 90%;
+    right: -20%;
+    border-radius: 30px 0 30px 0;
+    width: 300px;
+    padding-bottom: 10px;
+    display: none;
+    box-shadow: 1px 1px 5px#888888;
+    transition: right 0.7s ease;
+    z-index: 5;
+}
+
+.avatar-menu-item {
+    padding: 8px 0;
+
+    a {
+        color: black;
+    }
+}
+
+.avatar-menu-item a:hover {
+    color: #EA4C89;
+}
+
+.avatar-menu-item a i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#preview-profile {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#preview-profile img {
+    width: 20%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#preview-profile div {
+    width: 80%;
+}
+
+#preview-infor span:first-child {
+    color: #EA4C89;
+    font-weight: 700;
+}
+
+#preview-infor span:last-child {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* notice */
+.bg-primary {
+    background-color: #5e5251 !important;
+}
+
+#notice-number {
+    top: 15%;
+}
+
+#notice {
+    position: absolute;
+    width: 600%;
+    height: 335px;
+    top: 400%;
+    right: -20%;
+    border-radius: 30px 0 30px 0;
+    background-color: white;
+    padding: 20px 5px 20px 20px;
+    box-shadow: 1px 1px 5px#888888;
+    display: none;
+    transition: top 0.7s ease;
+    z-index: 5;
+}
+
+#notice-list {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#notice-list a {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 5px 0;
+}
+
+#notice-list a:hover {
+    color: #EA4C89;
+}
+
+#notice-list a i {
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+#notice-list a span {
+    font-weight: 500;
+}
+
+#notice-list .active {
+    opacity: 0.6;
+}
+
+#notice-list::-webkit-scrollbar {
+    /* Tùy chỉnh thanh cuộn cho trình duyệt Chrome và Safari */
+    width: 5px;
+}
+
+#notice-list::-webkit-scrollbar-thumb {
+    /* Tùy chỉnh phần thumb của thanh cuộn cho trình duyệt Chrome và Safari */
+    background-color: #EA4C89;
+    border-radius: 10px;
+}
+
+#notice-list::-webkit-scrollbar-track {
+    /* Tùy chỉnh phần track của thanh cuộn cho trình duyệt Chrome và Safari */
+    background-color: transparent;
+}
+
+/* ---- sidebar ----*/
+.bar-btn {
+    display: none;
+}
+
+.bar-btn i {
+    font-size: 34px;
+    color: #EA4C89;
+}
+
+#sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* hoặc right: 0 nếu bạn muốn đặt ở phía bên phải */
+    width: 100%;
+    display: none;
+    height: 50px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+}
+
+#sidebar .active {
+    opacity: 1;
+
+    i {
+        text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.sidebar-item {
+    color: #EA4C89;
+    opacity: 0.6;
+}
+
+.sidebar-item i {
+    font-size: 32px;
+}
+
+@media screen and (max-width: 430px) {
+    * {
+        font-size: 16px;
+    }
+
+    main {
+        padding-top: 60px;
+        padding-bottom: 100px;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    #logo img {
+        height: 40px;
+    }
+
+    .bar-btn {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #avatar {
+        height: 50px;
+        width: 50px;
+    }
+
+    .right-icon:first-child {
+        display: none;
+    }
+
+    #notice {
+        width: 450%;
+    }
+
+    #sidebar {
+        display: flex;
+    }
+}
+
+/* ---------------------------------------------------main-----------------------------------------------------------------*/
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+
+
+/* ----------------------------------------------------button---------------------------------------------------------------*/
+.mini-btn {
+    background-color: red;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px 0 10px 0;
+    border: none;
+    padding: 5px 10px;
+}
+
+.medium-btn {
+    background-color: blue;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 15px 0 15px 0;
+    border: none;
+    padding: 7px 15px;
+}
+
+.large-btn {
+    background-color: green;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 20px 0 20px 0;
+    border: none;
+    padding: 10px 25px;
+}
+
+.mini-btn.border-btn {
+    border: 2px solid;
+}
+
+.medium-btn.border-btn {
+    border: 3px solid;
+}
+
+.large-btn.border-btn {
+    border: 4px solid;
+}
+
+.pink-btn {
+    background-color: #EA4C89;
+    color: white;
+}
+
+.pink-btn:hover,
+.pink-btn.active {
+    background-color: white;
+    color: #EA4C89;
+}
+
+.white-btn {
+    background-color: white;
+    color: black;
+    border-color: #EA4C89 !important;
+}
+
+.white-btn:hover,
+.white-btn.active {
+    background-color: black;
+    color: white;
+    border-color: #EA4C89;
+}
+
+.black-btn {
+    background-color: black;
+    color: white;
+    border-color: #EA4C89 !important;
+}
+
+.black-btn:hover,
+.black-btn.active {
+    background-color: white;
+    color: black;
+    border-color: #EA4C89;
+}
+
+.black-btn.active, .white-btn.active, .pink-btn.active {
+    cursor: default;
+}
+
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    i {
+        font-size: 20px;
+        color: white;
+    }
+    background-color: #EA4C89;
+}
+
+.gradient-btn {
+    background-image: linear-gradient(to right, #D60A3B, #8C2FA1);
+    color: white;
+}
+
+.gradient-btn:hover {
+    background-image: linear-gradient(to right, #8C2FA1, #D60A3B);
+    color: black;
+}
+/* ------------------------------------------ heading ----------------------------------------------- */
+h2, h3, h4 {
+    color: #EA4C89;
+}

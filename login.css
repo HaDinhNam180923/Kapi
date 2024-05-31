@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #e06666, #f5d1d1);;
+    height: 100vh;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    width: 23%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.textbox {
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eccfcb;
+    transition: border-bottom 0.3s ease;
+}
+
+.textbox i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    transition: border-bottom 0.3s ease;
+}
+
+.forgot {
+    text-decoration: none;
+    color: #ea4c89;
+    font-size: 18px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.btn {
+    background: linear-gradient(to left, #e06666, #f5d1d1);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px 0;
+    width: 80%;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #e06666, #ea4c89);
+}
+
+.social {
+    padding-bottom: 5%;
+}
+
+.social a {
+    margin: 0 10px;
+    font-size: 25px;
+    color: #3b5998;
+    text-decoration: none;
+}
+
+.social a:nth-child(2) {
+    color: #1da1f2;
+}
+
+.social a:nth-child(3) {
+    color: #0088cc;
+}
+
+.social a:hover {
+    color: #ea4c89;
+}
+
+form p {
+    font-size: 18px;
+    color: black;
+}
+
+.register {
+    font-size: 18px;
+    color: #ea4c89;
+    text-decoration: none;
+}
+
+.register:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    padding-bottom: 10%;
+}
+
+
+
+@media screen and (max-width: 430px){
+    .login-box {
+        width: 70%;
+    }
+}
